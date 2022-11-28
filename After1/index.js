@@ -46,12 +46,15 @@ let entrada = prompt("Ingrese el día");
 
 while (entrada != "ESC") {
   if(entrada === "lunes"){
-    console.log("jugar");
+    let mensaje = ("jugar");
+    alert(mensaje);
 
-  }else if(entrada === "martes"){
-    console.log("dormir");
+  }else   if(entrada === "martes"){ 
+    let mensaje1 = ("dormir");
+    alert(mensaje1);
+ 
     
-  }else{
+   }else{
     console.log("ese dia no existe");
   }
 
