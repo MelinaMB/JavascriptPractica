@@ -1,0 +1,17 @@
+let precio = parseInt(prompt("Ingrese el precio minimo"));
+filtrar(precio);
+
+const filtrar = (precio) => {
+    let filtrados = productos.filter((item) => item.precio > 2000);
+
+    if (filtrados) {
+        let mensaje = `
+        id: ${filtrados.id}
+        Nombre: ${producto.nombres}
+        Precio: ${producto.precio}
+            `;
+        alert(mensaje);
+    } else {
+        alert("producto no encontrado");
+    }
+};
