@@ -1,0 +1,40 @@
+/* main */
+
+a {
+    text-decoration: none;
+}
+
+.main {
+    padding: 8px;
+    grid-area: main;
+
+}
+
+.img1,
+.img2 {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 2em;
+}
+
+.img1 {
+    img {
+
+        width: 100%;
+    }
+
+}
+
+.img2 {
+    img {
+        width: 60%;
+    }
+}
+
+.img1,
+.img2 {
+    h3 {
+        color: $color-secundario;
+    }
+}

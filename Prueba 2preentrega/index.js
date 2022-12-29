@@ -48,33 +48,31 @@ const buscar = (nombres) => {
     }
 };
 
-const filtrar = (precio) => {
-    let filtrados = productos.filter((item) => item.precio > precio);
 
-    if (filtrados) {
-        let mensaje = `
-        id: ${filtrados.id}
-        Nombre: ${filtrados.nombres}
-        Precio: ${filtrados.precio}
+let filtrados = productos.filter((item) => item.precio > precio);
+filtrados.forEach((item) => {
+    let mensaje = `
+        id: ${item.id}
+        Nombre: ${item.nombres}
+        Precio: ${item.precio}
             `;
-        alert(mensaje);
-    } else {
-        alert("producto no encontrado");
-    }
-};
+    alert(mensaje);
+
+})
 
 
-function calcular(){
+
+function calcular() {
     let producto = parseInt(prompt("Ingrese monto"));
-    let precio = `Precio con IVA $ ${((producto)*0.21)+(producto)}`;
+    let precio = `Precio con IVA $ ${((producto) * 0.21) + (producto)}`;
     alert(precio);
-  } 
+}
 
 saludar();
 let nombres = prompt("Ingrese el nombre del producto a buscar")
 buscar(nombres);
 let precio = parseInt(prompt("Ingrese el precio minimo"));
-filtrar(precio);
+
 
 comprar();
 
@@ -82,26 +80,26 @@ function comprar() {
     let mensaje;
     let entrada = "";
     while (entrada != "ESC") {
-      entrada = prompt(`¿Quiere comprar?\n 1-si \n 2- Salir \n Ingrese el Numero`);
-      if(entrada === "1"){
-       let mensaje = (`Comprar ${nombres}`);
-        alert(mensaje);
-        calcular();
-  
-        
-      }else if(entrada === "2"){ 
-        entrada = "ESC";
-        let finalizamos = "Finalizamos, Gracias por su compra";
-        alert(finalizamos);
-      }else{
-        mensaje = "ese producto no existe";
-        alert(mensaje)
-      }
+        entrada = prompt(`¿Quiere comprar?\n 1-si \n 2- Salir \n Ingrese el Numero`);
+        if (entrada === "1") {
+            let mensaje = (`Comprar ${nombres}`);
+            alert(mensaje);
+            calcular();
+
+
+        } else if (entrada === "2") {
+            entrada = "ESC";
+            let finalizamos = "Finalizamos, Gracias por su compra";
+            alert(finalizamos);
+        } else {
+            mensaje = "ese producto no existe";
+            alert(mensaje)
+        }
     }
-  }
-  
-  saludar(); 
-  comprar();
+}
+
+saludar();
+comprar();
 
 
 

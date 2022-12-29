@@ -1,0 +1,215 @@
+/* como se va a ver en el escritorio */
+@media screen and (min-width: 768px) {
+
+    .contenedor {
+        display: grid;
+        grid-template-areas:
+            "nav"
+            "main"
+            "footer"
+        ;
+    }
+
+    /*mixin*/
+    @mixin flex ($direccion, $justificado, $alineacion) {
+        flex-direction: $direccion;
+        justify-content: $justificado;
+        align-items: $alineacion;
+    }
+
+    .imglogo {
+        display: flex;
+        @include flex(row, left, center);
+
+    }
+
+    h1 {
+        color: $color-primario;
+        margin: 10px;
+        font-family: 'Abril Fatface', cursive, sans-serif;
+    }
+
+    /* main */
+    .imagen {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        font-size: 1em;
+
+    }
+
+    /* extend*/
+    .img1 {
+        @extend .imagen;
+
+    }
+
+    .img2 {
+        @extend .imagen;
+        margin: 40px;
+
+        img {
+            width: 100%;
+        }
+
+    }
+
+
+    /* footer */
+    footer {
+        grid-area: footer;
+        display: grid;
+        grid-template-areas:
+            "logofooter contacto"
+            "logofooter redessociales"
+        ;
+        font-size: 1em;
+        margin: 10px 0 0 0;
+        justify-content: normal;
+
+        section {
+            div {
+                margin: 10px;
+            }
+        }
+    }
+
+    .logofooter {
+        grid-area: logofooter;
+    }
+
+    .contacto {
+        grid-area: contacto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+
+    }
+
+    .redessociales {
+        grid-area: redessociales;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .redes {
+        display: flex;
+        @include flex (row, space-evenly, center);
+        margin: 10px;
+    }
+
+   
+
+
+    /* ················pagina empresa················ */
+    /* main */
+    .logomainempresa {
+        display: flex;
+        color: $color-secundario;
+        font-size: 1.5em;
+    }
+
+    .empresadescripcion {
+        font-size: 1.5em;
+    }
+
+    /* ··········pagina productos············· */
+    .productos {
+        flex-direction: row;
+        text-align: center;
+        font-size: 2em;
+        margin: $marging;
+    }
+
+    .imgproducto {
+        flex-direction: row;
+        justify-content: space-around;
+        margin: $marging;
+        font-size: 0.8em;
+    }
+
+    /*···················· pagina micuenta······················· */
+
+    /* main */
+    .micuenta {
+        background-image: url(../img/micuenta.jpg);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        line-height: 3;
+        font-family: 'Abril Fatface', cursive, sans-serif;
+        font-size: $spacing;
+    }
+
+    h4 {
+        display: block;
+        margin-block-start: 0px;
+        margin-block-end: 0px;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+
+    .accederregistro {
+        display: flex;
+        @include flex(row, space-between, center);
+        text-align: center;
+        margin: 0;
+        font-size: 1em;
+    }
+
+    .registroacceder {
+        width: $width;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 1199px) {
+    .flip-card-back {
+        content-visibility: hidden;
+    }
+
+}
+
+@media screen and (min-width: 1200px) {
+    .flip-card {
+        background-color: transparent;
+        width: $spacing*6;
+        height: $spacing*4;
+    }
+
+    .flip-card2 {
+        background-color: transparent;
+        width: $spacing*3;
+        height: $spacing*4;
+    }
+
+    .flip-card-inner {
+        position: relative;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+    }
+
+    .flip-card2:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+    }
+
+    .flip-card-front,
+    .flip-card-back {
+        position: absolute;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .flip-card-back {
+        transform: rotateY(180deg);
+    }
+
+
+}

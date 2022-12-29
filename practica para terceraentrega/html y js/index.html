@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="titulo" class="titulo">Muebles</h1>
+        <button id="boton-carrito"><span id="contadorCarrito">0</span></button>
+    </header>
+
+    <!-- ingreso de usuario -->
+    <form id="formulario">
+        <label>Ingrese Nombre y Apellido</label>
+        <input type="text">
+        <input type="text">
+        <input type="submit" value="Ingresar">
+        <p id="mensaje"></p>
+    </form>
+
+    <!-- buscador de productos -->
+    <input type="text" name="buscador" id="buscador" placeholder="Buscar por nombre...">
+    <button id="buscar">Buscar</button>
+    <div id="panel"></div>
+
+    <!-- filtrar producto -->
+    <input type="text" name="filtrar" id="filtrar" placeholder="Filtro por percio menor a...">
+    <button id="filtro">Filtro</button>
+    <div id="panel"></div>
+
+    <!-- productos -->
+    <div id="contenedor"></div>
+
+
+    <!-- carrito -->
+    <main id="contenedor-productos"></main>
+
+    <div>
+        <div>
+            <h3>Carrito</h3>
+            <div id="carrito-contenedor"></div>
+
+            <p>Precio total: $<span id="precioTotal">0</span></p>
+            <button id="vaciar-carrito">Vaciar carrito</button>
+        </div>
+    </div>
+
+    <script src="./index.js"></script>
+</body>
+
+</html>
