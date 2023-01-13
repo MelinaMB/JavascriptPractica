@@ -28,7 +28,7 @@ formulario.addEventListener("submit", (e) => {
 
 // productos en el html
 
-let contenedor = document.getElementById("contenedor");
+let contenedor = document.getElementById("container");
 const productos = [
     { id: 1, nombres: "Vanitory Marron", precio: 30000, img: "vanitorymarron.png", cantidad: 1},
     { id: 2, nombres: "Vanitory Clarito", precio: 27000, img: "vanitoryclarito.jpg", cantidad: 1},

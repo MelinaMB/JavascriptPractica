@@ -1,0 +1,335 @@
+@charset "UTF-8";
+/* nav */
+.imglogo {
+  justify-content: center;
+  text-align: center; }
+
+.bigicon {
+  color: white; }
+
+.mix {
+  min-height: 370px; }
+
+ul.dropdown-cart {
+  min-width: 400px;
+  border: 2px solid #343434;
+  padding: 2px;
+  margin: 7px;
+  margin-top: 11px; }
+
+ul.dropdown-cart li .item {
+  display: block;
+  padding: 3px 10px;
+  margin: 3px 0; }
+
+ul.dropdown-cart li .item:hover {
+  background-color: #c3c5c5; }
+
+ul.dropdown-cart li .item:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+ul.dropdown-cart li .item-left {
+  float: left; }
+
+ul.dropdown-cart li .item-left img {
+  width: 70px; }
+
+ul.dropdown-cart li .item-left img,
+ul.dropdown-cart li .item-left span.item-info {
+  float: left; }
+
+ul.dropdown-cart li .item-left span.item-info {
+  margin-left: 10px; }
+
+ul.dropdown-cart li .item-left span.item-info span {
+  display: block; }
+
+ul.dropdown-cart li .item-right {
+  float: right; }
+
+ul.dropdown-cart li .item-right button {
+  margin-top: 14px; }
+
+.nav-carrito a {
+  padding: 0px 5px 0px 15px; }
+
+.nav-carrito a i {
+  font-size: 1.8rem; }
+
+/* main */
+a {
+  text-decoration: none; }
+
+.main {
+  padding: 8px;
+  grid-area: main; }
+
+.img1,
+.img2 {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2em; }
+
+.img1 img {
+  width: 100%; }
+
+.img2 img {
+  width: 60%; }
+
+.img1 h3,
+.img2 h3 {
+  color: #000000; }
+
+/* footer */
+footer {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1em;
+  margin: 40px 0px 0px 0px;
+  background-color: #e6e6e6; }
+
+.redes {
+  padding: 0; }
+
+/* ················pagina empresa················ */
+/* main */
+.logomainempresa {
+  display: flex;
+  color: #e63333;
+  font-size: 1em; }
+
+/* ··········pagina productos············· */
+.imgproducto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5em; }
+  .imgproducto img {
+    margin: 30px; }
+
+.productos-row {
+  max-width: 100%; }
+
+/*···················· pagina micuenta······················· */
+/* main */
+.micuenta {
+  background-image: url(../img/micuenta.jpg);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  line-height: 3;
+  font-family: 'Abril Fatface', cursive, sans-serif;
+  font-size: 100px; }
+
+h4 {
+  display: block;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold; }
+
+.registroacceder {
+  margin: 50px; }
+
+/* ···················pagina contacto···················· */
+/* ·····main····· */
+.centrar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1em; }
+
+.formulario {
+  margin: 40px; }
+
+/* como se va a ver en el escritorio */
+@media screen and (min-width: 768px) {
+  .contenedor {
+    display: grid;
+    grid-template-areas: "nav" "main" "footer"; }
+  /*mixin*/
+  .imglogo {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center; }
+  h1 {
+    color: #e63333;
+    margin: 10px;
+    font-family: 'Abril Fatface', cursive, sans-serif; }
+  /* main */
+  .imagen, .img1, .img2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 1em; }
+  /* extend*/
+  .img2 {
+    margin: 40px; }
+    .img2 img {
+      width: 100%; }
+  /* footer */
+  footer {
+    grid-area: footer;
+    display: grid;
+    grid-template-areas: "logofooter contacto" "logofooter redessociales";
+    font-size: 1em;
+    margin: 10px 0 0 0;
+    justify-content: normal; }
+    footer section div {
+      margin: 10px; }
+  .logofooter {
+    grid-area: logofooter; }
+  .contacto {
+    grid-area: contacto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly; }
+  .redessociales {
+    grid-area: redessociales;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; }
+  .redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px; }
+  /* ················pagina empresa················ */
+  /* main */
+  .logomainempresa {
+    display: flex;
+    color: #000000;
+    font-size: 1.5em; }
+  .empresadescripcion {
+    font-size: 1.5em; }
+  /* ··········pagina productos············· */
+  .productos {
+    flex-direction: row;
+    text-align: center;
+    font-size: 2em;
+    margin: 80px 0 80px 0; }
+  .imgproducto {
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 80px 0 80px 0;
+    font-size: 0.8em; }
+  /*···················· pagina micuenta······················· */
+  /* main */
+  .micuenta {
+    background-image: url(../img/micuenta.jpg);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    line-height: 3;
+    font-family: 'Abril Fatface', cursive, sans-serif;
+    font-size: 100px; }
+  h4 {
+    display: block;
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold; }
+  .accederregistro {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    font-size: 1em; }
+  .registroacceder {
+    width: 45%; } }
+
+@media screen and (min-width: 0px) and (max-width: 1199px) {
+  .flip-card-back {
+    content-visibility: hidden; } }
+
+@media screen and (min-width: 1200px) {
+  .flip-card {
+    background-color: transparent;
+    width: 600px;
+    height: 400px; }
+  .flip-card2 {
+    background-color: transparent;
+    width: 300px;
+    height: 400px; }
+  .flip-card-inner {
+    position: relative;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d; }
+  .flip-card2:hover .flip-card-inner {
+    transform: rotateY(180deg); }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg); }
+  .flip-card-front,
+  .flip-card-back {
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; }
+  .flip-card-back {
+    transform: rotateY(180deg); } }
+
+.tarjeta {
+  margin-top: 5px;
+  margin-bottom: 5px; }
+
+.tarjeta-img {
+  width: 350px;
+  height: 300px; }
+
+#formulario {
+  max-width: 600px;
+  max-height: 600px; }
+
+.tarjeta-body {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 10px 10px 10px; }
+
+.usuario {
+  background-image: url(../img/alacenahierro.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+#formulario div, #formulario .form-control {
+  background: transparent; }
+
+#formulario ::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: red;
+  opacity: 1;
+  /* Firefox */ }
+
+#formulario :-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: red; }
+
+#formulario ::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: red; }
+
+html {
+  height: 100%; }
+
+body {
+  min-height: 100%; }
+
+.formulario {
+  height: 100%; }

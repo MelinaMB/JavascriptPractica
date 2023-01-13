@@ -1,0 +1,21 @@
+.tarjeta {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    
+}
+
+.tarjeta-img {
+    width: 350px;
+    height: 300px;
+}
+
+#formulario {
+    max-width: 600px;
+    max-height: 600px;
+}
+
+.tarjeta-body {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 10px 10px 10px;
+}

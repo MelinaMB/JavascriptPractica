@@ -1,0 +1,35 @@
+.usuario {
+    background-image: url(../img/alacenahierro.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+#formulario div, #formulario .form-control {
+    background: transparent;
+    
+}
+
+#formulario ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: red;
+    opacity: 1; /* Firefox */
+  }
+  
+  #formulario  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: red;
+  }
+  
+  #formulario  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: red;
+  }
+
+html {
+  height: 100%;
+}
+body {  
+    min-height: 100%;
+}
+
+.formulario {
+  height: 100%;
+}

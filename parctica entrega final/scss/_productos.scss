@@ -1,0 +1,21 @@
+/* ··········pagina productos············· */
+
+.imgproducto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-size: 1.5em;
+    
+    img {
+        margin: 30px;
+    }
+
+   
+
+
+}
+
+.productos-row {
+    max-width: 100%;
+}
