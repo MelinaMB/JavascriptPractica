@@ -3,6 +3,12 @@ const contenedorProducto = document.getElementById('contenedor-producto')
 
 const contenedorCarrito = document.getElementById('carrito-contenedor')
 
+const mennosProducto = document.getElementById('menos-producto')
+
+const masProducto = document.getElementById('mas-producto')
+
+const showProducto = document.getElementById('show-cantidad')
+
 const carritoDropdown = document.getElementById('carrito-dropdown')
 
 const carritoDropdownProductos = document.getElementById('carrito-dropdown-productos')
@@ -23,10 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 // para vaciar el carrito
-botonVaciar.addEventListener('click', () => {
-  carrito.length = 0
-  actualizarCarrito()
-})
+if (botonVaciar) {
+  botonVaciar.addEventListener('click', () => {
+    carrito = []
+    actualizarCarrito()
+  })
+}
 
 const actualizarDropdown = () => {
   if (carrito.length > 0) {
@@ -52,14 +60,15 @@ const actualizarDropdownProductos = () => {
               </span>
           </span>
         </span>`
-      carritoDropdownProductos.appendChild(div)
+    carritoDropdownProductos.appendChild(div)
   })
-  if (carrito.length > 0 ) {
+  if (carrito.length > 0) {
     const div = document.createElement('li')
-    div.innerHTML = '<div class="text-center"><div><h3>Ir al carrito</h3></div></div>'
+    div.innerHTML = '<div class="text-center"><div><a class="nav-link" href="carritopag.html"><h3>Ir al carrito</h3></a></div></div>'
     carritoDropdownProductos.appendChild(div)
   }
 }
+
 
 // agregar al carrito
 const agregarAlCarrito = (prodId) => {
@@ -92,31 +101,59 @@ const eliminarDelCarrito = (prodId) => {
 // actualizar el carrito
 const actualizarCarrito = () => {
 
-  contenedorCarrito.innerHTML = ""
+  if (contenedorCarrito) {
+    contenedorCarrito.innerHTML = ""
 
-  // actualiza la vista del carrito
-  carrito.forEach((prod) => {
-    const div = document.createElement('div')
-    div.innerHTML = `
-      <img src="../img/${prod.img}" class="card-img-top tarjeta-img" alt=" "max-width:50px">
-      <p>${prod.nombres}</p>
-      <p>Precio: ${prod.precio}</p>
-      <p>Cantidad: <span id="cantidad">${prod.cantidad}</span></p>
-      <button onclick = "eliminarDelCarrito(${prod.id})" class="btn btn-outline-danger">Eliminar</button>
-      `
-    contenedorCarrito.appendChild(div)
-  })
-  contadorCarrito.innerText = carrito.length
+    // actualiza la vista del carrito
+    carrito.forEach((prod) => {
+      const div = document.createElement('div');
+      div.classList = "d-flex align-items-center justify-content-center col-xxl-3 col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-3 mb-sm-0";
+      div.innerHTML = `
+      <div class="card tarjeta">
+        <img src="../img/${prod.img}" class="card-img-top tarjeta-img" alt=" "max-width:300px">
+       <div>
+        <p class="card-title fs-5 text-center">${prod.nombres}</p>
+        <br>
+        <div class="tarjeta-body">
+        <p class="card-text">Precio: ${prod.precio}</p>
+        <p>Cantidad: 
+        <button id="menos-producto">-</button>
+        <span id="show-cantidad">${prod.cantidad}</span>
+        <button id="mas-producto">+</button></p>
+        <br>
+        </div>
+        <button onclick = "eliminarDelCarrito(${prod.id})" class="btn btn-outline-danger">Eliminar</button>
+      </div>
+      </div>
+        `
+      contenedorCarrito.appendChild(div)
+    })
+  }
+  if (contadorCarrito) {
+    contadorCarrito.innerText = carrito.length
+  }
+
+  // sumar cantidad del carrito
+
+  masProducto.onclick = function () {
+    
+  }
 
   // Calcular el total del carrito
-  let total = 0
-  if (carrito.length > 0) {
-    total = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
+  if (precioTotal) {
+    calcularTotalCarrito()
   }
-  precioTotal.innerText = total
 
   // Actualizo el almacenamiento local
   localStorage.setItem('carrito', JSON.stringify(carrito))
   actualizarDropdown()
   actualizarDropdownProductos()
+}
+
+function calcularTotalCarrito() {
+  let total = 0
+  if (carrito.length > 0) {
+    total = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0)
+  }
+  precioTotal.innerText = total
 }

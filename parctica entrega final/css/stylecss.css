@@ -93,7 +93,7 @@ footer {
   text-align: center;
   font-size: 1em;
   margin: 40px 0px 0px 0px;
-  background-color: #e6e6e6; }
+  background-color: #e6e6e63b; }
 
 .redes {
   padding: 0; }
@@ -106,6 +106,9 @@ footer {
   font-size: 1em; }
 
 /* ··········pagina productos············· */
+body {
+  background-color: #e6e6e6; }
+
 .imgproducto {
   display: flex;
   flex-direction: column;
@@ -304,7 +307,7 @@ h4 {
   margin: 0px 10px 10px 10px; }
 
 .usuario {
-  background-image: url(../img/alacenahierro.jpg);
+  background-image: url(../img/usuario.jpg.jpg);
   background-repeat: no-repeat;
   background-size: cover; }
 

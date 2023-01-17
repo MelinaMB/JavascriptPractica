@@ -1,4 +1,4 @@
-// imput de usuarios y guardado
+// input de usuarios y guardado
 let usuariosNuevos;
 
 let formulario = document.getElementById("formulario");
@@ -20,7 +20,7 @@ formulario.addEventListener("submit", (e) => {
 
   usuariosNuevos.push(usuario);
 
-  localStorage.setItem("usuariosStorage" , JSON.stringify(usuariosNuevos));
+  localStorage.setItem("usuariosStorage", JSON.stringify(usuariosNuevos));
 
   Swal.fire({
     title: 'Bienvenido',
@@ -29,8 +29,9 @@ formulario.addEventListener("submit", (e) => {
     imageWidth: 400,
     imageHeight: 200,
     imageAlt: 'Custom image',
-    
-  }).then(function() {
-    window.location = "index.html";
-});
+
+  }).then(function () {
+    window.location = "productos.html";
+  });
+  usuarioActual = usuario;
 });
