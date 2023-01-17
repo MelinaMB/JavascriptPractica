@@ -3,10 +3,6 @@ const contenedorProducto = document.getElementById('contenedor-producto')
 
 const contenedorCarrito = document.getElementById('carrito-contenedor')
 
-const mennosProducto = document.getElementById('menos-producto')
-
-const masProducto = document.getElementById('mas-producto')
-
 const showProducto = document.getElementById('show-cantidad')
 
 const carritoDropdown = document.getElementById('carrito-dropdown')
@@ -31,9 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
 // para vaciar el carrito
 if (botonVaciar) {
   botonVaciar.addEventListener('click', () => {
-    carrito = []
-    actualizarCarrito()
+    vaciarCarrito()
   })
+}
+
+function vaciarCarrito() {
+  carrito = []
+  actualizarCarrito()
 }
 
 const actualizarDropdown = () => {
@@ -117,9 +117,9 @@ const actualizarCarrito = () => {
         <div class="tarjeta-body">
         <p class="card-text">Precio: ${prod.precio}</p>
         <p>Cantidad: 
-        <button id="menos-producto">-</button>
-        <span id="show-cantidad">${prod.cantidad}</span>
-        <button id="mas-producto">+</button></p>
+        <button id="menos-producto${prod.id}">-</button>
+        <span id="show-cantidad${prod.id}">${prod.cantidad}</span>
+        <button id="mas-producto${prod.id}">+</button></p>
         <br>
         </div>
         <button onclick = "eliminarDelCarrito(${prod.id})" class="btn btn-outline-danger">Eliminar</button>
@@ -127,17 +127,35 @@ const actualizarCarrito = () => {
       </div>
         `
       contenedorCarrito.appendChild(div)
+
+      // sumar cantidad del carrito
+
+      let masProducto = document.getElementById(`mas-producto${prod.id}`)
+      let showCantidad = document.getElementById(`show-cantidad${prod.id}`)
+      masProducto.onclick = function () {
+        prod.cantidad++
+        showCantidad.innerText = prod.cantidad
+
+        calcularTotalCarrito()
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+      }
+      // restar cantidad del carrito
+
+      let menosProducto = document.getElementById(`menos-producto${prod.id}`)
+      menosProducto.onclick = function () {
+        prod.cantidad--
+        showCantidad.innerText = prod.cantidad
+
+        calcularTotalCarrito()
+        localStorage.setItem('carrito', JSON.stringify(carrito))
+      }
+
     })
   }
   if (contadorCarrito) {
     contadorCarrito.innerText = carrito.length
   }
 
-  // sumar cantidad del carrito
-
-  masProducto.onclick = function () {
-    
-  }
 
   // Calcular el total del carrito
   if (precioTotal) {
@@ -157,3 +175,30 @@ function calcularTotalCarrito() {
   }
   precioTotal.innerText = total
 }
+
+// boton pagar carrito
+
+let pagarCarrito = document.getElementById(`pagar-carrito`);
+
+pagarCarrito.addEventListener('click', () => {
+  Swal.fire({
+    title: 'Realizar compra',
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Pagar ahora',
+    cancelButtonText: 'Volver'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        'Compra realizada',
+        'Tu compra esta en camino.',
+        'success'
+      ).then((result) => {
+        vaciarCarrito()
+        window.location.href = "productos.html";
+      })
+    }
+  })
+});

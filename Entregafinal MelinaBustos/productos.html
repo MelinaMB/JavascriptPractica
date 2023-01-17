@@ -29,8 +29,7 @@
     <!-- link favicon -->
     <link rel="icon" href="../img/favicon-16x16.png">
     <!-- nombre de la pestaña -->
-    <title>Tus compras-Kioshi</title>
-
+    <title>Productos-Kioshi</title>
 </head>
 
 <body>
@@ -58,19 +57,29 @@
                         <li class="nav-item">
                             <a class="nav-link" href="productos.html">Productos</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="carritopag.html">Carrito</a>
-                        </li>
                     </ul>
+                    <form class="d-flex">
+
+                        <!-- buscador de productos -->
+                        <input type="text" name="buscador" id="buscador" placeholder="Buscar por nombre..."
+                            class="form-control me-2 ">
+                        <button type="button" id="buscar" class="btn btn-outline-success filtrobuscador">Buscar</button>
+                        <div id="panel"></div>
+
+                        <!-- filtrar producto -->
+                        <input type="text" name="filtrar" id="filtrar" placeholder="Filtro por percio menor a..."
+                            class="form-control me-2">
+                        <button type="button" id="filtro" class="btn btn-outline-success filtrobuscador">Filtro</button>
+                        <div id="panel"></div>
+                    </form>
+                    <!--Carrito y cantidad de productos en carrito-->
                     <ul class="navbar-nav">
                         <li class="nav-item dropdown dropstart nav-carrito">
-                            <a class="nav-link" href="#" id="carrito-dropdown" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link" id="carrito-dropdown" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                             </a>
                             <ul class="dropdown-menu dropdown-cart" role="menu" id="carrito-dropdown-productos"
                                 aria-labelledby="carrito-dropdown">
-                                <li class="divider"></li>
-                                <li><a class="text-center" href="#">Ver Carrito</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -78,30 +87,79 @@
             </div>
         </nav>
     </header>
-    <!-- carrito -->
-    <main id="contenedor-productos"></main>
 
-    <div class="text-center">
-        <div>
-            <h3>Carrito</h3>
-            <div class="row productos-row" id="carrito-contenedor">
-                <div>
-                    
-                    <input id="show-cantidad" data-value type="text" value="1" disabled />
-                    
-                </div>
-            </div>
+    <main>
 
-            <p>Precio total: $<span id="precioTotal">0</span></p>
-            <button id="vaciar-carrito" class="btn btn-outline-danger">Vaciar carrito</button>
-        </div>
-    </div>
+        <h2 id="titulo" class="titulo">Muebles</h2>
+
+
+        <!-- ingreso de usuario -->
+        <form id="formulario">
+
+        </form>
+
+        <!-- productos -->
+        <div class="row productos-row" id="container"></div>
     </main>
+
+    <!-- pie de pagina -->
+
+    <footer>
+        <!-- logo del footer -->
+        <section class="logofooter">
+            <div>
+                <img src="../img/favicon 60x60.png" alt="logofooter">
+                <h2>Kioshi Deco</h2>
+            </div>
+        </section>
+        <!-- contacto -->
+        <section class="contacto">
+            <div>
+                <strong>LLamanos</strong>
+                <br>
+                <p>12345678 / 12345678</p>
+            </div>
+            <div>
+                <strong>Escribinos</strong>
+                <br>
+                <p>kioshideco@gmail.com</p>
+            </div>
+            <div>
+                <strong>Visitanos</strong>
+                <p>Quilmes, Buenos Aires, Argentina</p>
+            </div>
+        </section>
+        <!-- redes sociales -->
+        <section class="redessociales">
+            <div class="titulo">
+                <strong>Seguinos</strong>
+            </div>
+            <div>
+                <ul class="redes">
+                    <li class="redes">
+                        <a href="https://www.instagram.com/" target="_blank"><img src="../img/logo instagram.jpg"
+                                alt="logoinstagram"></a>
+                    </li>
+                    <li class="redes">
+                        <a href="https://es-la.facebook.com/" target="_blank"><img src="../img/logo facebook.jpg"
+                                alt="logofacebook"></a>
+                    </li>
+                    <li class="redes">
+                        <a href="https://www.youtube.com/" target="_blank"><img src="../img/logo youtube.jpg"
+                                alt="logoyoutube"></a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
         crossorigin="anonymous"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/index.js"></script>
+    <script src="./js/usuario.js"></script>
+    <script src="./js/producto.js"></script>
     <script src="./js/carrito.js"></script>
 </body>
 
