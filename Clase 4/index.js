@@ -1,9 +1,8 @@
-/* 
-estructura de las funciones
+/* estructura de las funciones */
 function nombre(){
-  codigo de la funcion
-}
-*/
+  /* codigo de la funcion */
+};
+nombre();
 
 /* function saludar(){
   let apellido = prompt("Ingrese su apellido");
@@ -62,3 +61,48 @@ let nuevoPrecio = resta(suma(precioProducto, iva(precioProducto)), descuento);
 
 let nuevoPrecio = resta(suma(precioProducto, iva(precioProducto)), descuento);
 console.log(nuevoPrecio);  */
+
+let resultado = 0;
+
+function sumar(num1, num2){
+  resultado = num1 + num2;
+};
+
+sumar(3, 4);
+console.log(resultado);
+
+function resta(num1, num2){
+  resultado = num1 - num2;
+};
+
+/* const suma = function(a, b) {
+  return a + b;
+}; */
+
+const suma = (num1, num2) => num1 + num2; 
+
+const calculadora = (num1, num2, operacion) => {
+  switch (operacion) {
+    case "+":
+      return num1 + num2;
+      break;
+
+    case "-":
+      return num1 - num2;
+      break;
+
+    case "/":
+      return num1 / num2;
+      break;
+
+    case "*":
+      return num1 * num2;
+      break;
+
+    default:
+      return "Operacion no disponible";
+      break;
+  }
+};
+
+calculadora(3, 4);

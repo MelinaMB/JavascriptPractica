@@ -14,14 +14,14 @@ alert("finalizamos"); */
 
 /* estructura del if => else */
 
-/* let respuesta = prompt("Finalizamos la tarea?");
+let respuesta = prompt("Finalizamos la tarea?").toLowerCase();
 
 if(respuesta === "si"){
     alert("Puedes salir a jugar");
 }else{
     alert("No puedes salir a jugar");
 }
- */
+
 
 /* let nombre = prompt("Ingrese en nombre")
 
