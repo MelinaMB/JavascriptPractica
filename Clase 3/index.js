@@ -1,9 +1,8 @@
-/* 
-estructura del for
-for(desde; hasta; actualizacion){
-  codigo a repetir
-}
-*/
+/* estructura del for */
+/* for(desde; hasta; actualizacion){
+   codigo a repetir 
+} */
+
 //i++ === i = i + 1
 /* for(let i = 0; i < 100; i++){
   console.log(i);
@@ -18,12 +17,12 @@ for(desde; hasta; actualizacion){
 //   alert(mensaje);
 // }
 
-/* for(let turno = 1; turno <= 3; turno++){
+for (let turno = 1; turno <= 3; turno++) {
   let nombre = prompt("Ingrese su nombre para asignar un turno");
   let mensaje = `Turno #${turno} Nombre: ${nombre}`;
   alert(mensaje);
 }
-alert("Turnos agotados"); */
+alert("Turnos agotados");
 
 /* for(let i = 1; i <= 10; i++){
   if(i === 5){
@@ -34,14 +33,14 @@ alert("Turnos agotados"); */
 }
 console.log("finalizamos"); */
 
-// for(let i = 1; i <= 10; i++){
-//   if(i === 5){
-//     console.log("saltamos el paso ", i);
-//     continue;
-//   }
+for (let i = 1; i <= 10; i++) {
+  if (i === 5) {
+    console.log("saltamos el paso ", i);
+    continue;
+  }
 
-//   console.log(i);
-// }
+  console.log(i);
+}
 
 // for(let i = 1; i <= 10; i++){
 //   if(usuario covid === false){
@@ -51,16 +50,14 @@ console.log("finalizamos"); */
 //   //le damos la medicina al enfermo
 // }
 
-/* 
-estructura del while
-while(condicion){
-  codigo a ejecutar siempre que la condicion sea verdadera
-}
-*/
-
-/* while(true){
-  console.log("hola");
+/* estructura del while */
+/* while(condicion){
+  /* codigo a ejecutar siempre que la condicion sea verdadera 
 } */
+
+/*  while(true){
+  console.log("hola");
+}  */
 
 /* let entrada = prompt("Ingrese un dato");
 while(entrada != "ESC"){
@@ -77,11 +74,11 @@ while(usuario != "andres"){
 }
 alert("Bienvenido usuario correcto"); */
 
-/* 
-estructura del do while
-do{
-}while(condicion);
-*/
+/* estructura del do while*/
+/* do{
+}while(condicion){
+  
+}; */
 
 /* let repetir = false; */
 //while primero piensa y luego actua
@@ -95,28 +92,27 @@ do{
 }while(repetir); */
 
 /* 
-estructura del switch
-switch(valor){
+estructura del switch */
+switch (valor) {
   case valor1:
-    codigo a ejecutar en caso de que el valor === valor1
+    /* codigo a ejecutar en caso de que el valor === valor1 */
     break;
   case valor2:
-    codigo a ejecutar en caso de que el valor === valor2
+    /* codigo a ejecutar en caso de que el valor === valor2 */
     break;
-  
-    .
-    .
-    .
-  case valorn: 
-    codigo a ejecutar en caso de que el valor === valorn
+
+  /*  .
+       .
+       . */
+  case valorn:
+    /* codigo a ejecutar en caso de que el valor === valorn */
     break;
   default:
-    codigo a ejecutar en caso de que el valor no coincida con ninguno de los valores anteriores
+    /* codigo a ejecutar en caso de que el valor no coincida con ninguno de los valores anteriores */
     break;
-}
-*/
+};
 
-let moneda = "cop";
+/* let moneda = "cop";
 
 switch (moneda) {
   case "cop":
@@ -134,10 +130,9 @@ switch (moneda) {
   default:
     console.log("moneda no reconocida");
     break;
-}
+} */
 
-
-/* let entrada = prompt("Ingresar un nombre");
+/*  let entrada = prompt("Ingresar un nombre");
 
 while(entrada != "ESC" ){
    switch (entrada) {
@@ -152,4 +147,4 @@ while(entrada != "ESC" ){
            break;
    }
    entrada = prompt("Ingresar un nombre");
-} */
+}  */
