@@ -20,4 +20,19 @@ let uno = 1, dos = 2, tres = 3;
 //     console.log("tu numero es la raiz cuadrada de" + elNumero * elNumero);
 // }
 
-if (1 + 1 !== 3) console.log("es falso");
+// if (1 + 1 !== 3) console.log("es falso");
+
+// ciclos
+// let resultado = 1;
+// let contador = 0;
+// while (contador < 10) {
+//     resultado = resultado * 2;
+//     contador = contador + 1;
+// };
+// console.log(resultado);
+
+let tuNombre;
+do {
+    tuNombre = prompt("quien eres?");
+} while (!tuNombre);
+console.log(tuNombre);
